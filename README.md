@@ -1,8 +1,8 @@
 # TensorFlow-MPI for CPU from sources for Ubuntu 18.04
 
-The instructions are to install CPU-only TensorFlow with MPI support using Python 3.6.5
+The instructions are to install CPU-only TensorFlow with MPI support using Python 3.6.5.
 
-Requirements
+Requirements:
 
     sudo pip3 install git six numpy wheel 
     
