@@ -71,7 +71,7 @@ We now run the script that was generated with the previous command by typing:
 
 Finally, we use pip3 to install the wheel file created by:
 
-    sudo pip install /tmp/tensorflow_pkg/tensorflow-1.8.0-py2-none-any.whl
+    sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.8.0-py2-none-any.whl
 
 ## Validate Installation
 
