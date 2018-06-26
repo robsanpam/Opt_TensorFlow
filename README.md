@@ -5,7 +5,11 @@ The instructions are to install CPU-only TensorFlow with MPI support using Pytho
 Requirements:
 
     sudo pip3 install git six numpy wheel 
-    
+    sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel
+    sudo apt-get install pkg-config zip g++ zlib1g-dev unzip
+
+## Downloading TensorFlow
+
 First, clone the TensorFlow repository by issuing:
   
     git clone https://github.com/tensorflow/tensorflow
@@ -14,16 +18,10 @@ Go to the new subdirectory created _tensorflow_ and select a specific branch to 
     
     cd tensorflow
     git checkout r1.8
+    
+## Installing Bazel
 
-Now we need to prepare the environment for Linux. First we need to make sure we have the following packages:
-
-    sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel
-
-Next we need to install Bazel, which is an open-source build and test tool. For this, we must first install the prerequisites:
-
-    sudo apt-get install pkg-config zip g++ zlib1g-dev unzip
-
-Now we download Bazel by doing:
+Bazel is an open-source build and test tool. We download Bazel by doing:
 
     wget https://github.com/bazelbuild/bazel/releases/download/0.14.1/bazel-0.14.1-installer-linux-x86_64.sh
 
@@ -36,6 +34,13 @@ Add the following command to your _~/.bashrc_ file:
 
     export PATH="$PATH:$HOME/bin"
     source /home/robsanpam/.bazel/bin/bazel-complete.bash
+
+## Installing OpenMPI and mpi4py.
+
+Please make sure to follow the instructions on https://github.com/arundasan91/MPI---Message-Passing-Interface/blob/master/MPI4py_Installation.md
+
+
+## Configuring TensorFlow Installation
 
 Now we can start configuring the installation. We go to the tensorflow directory and run the _configure.py_ with:
 
@@ -54,6 +59,8 @@ One of the questions that configure will ask is as follows:
 
 TensorFlow recommends accepting the default (-march=native), which will optimize the generated code for your local machine's CPU type.
 
+## Building the Package
+
 Now to build the pip package we need to invoke:
 
     bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
@@ -65,6 +72,8 @@ We now run the script that was generated with the previous command by typing:
 Finally, we use pip3 to install the wheel file created by:
 
     sudo pip install /tmp/tensorflow_pkg/tensorflow-1.8.0-py2-none-any.whl
+
+## Validate Installation
 
 To validate the installation, we can cd to any other folder other than the tensorflow subdirectory from which we invoked the configure command and type:
 
