@@ -61,6 +61,10 @@ TensorFlow recommends accepting the default (-march=native), which will optimize
 
 ## Building the Package
 
+If we build the package as it is right now, we will get an error. We need to go to tensorflow/contrib/mpi/mpi_utils.h and add the next command on line 25 and save:
+
+        #include "tensorflow/core/platform/logging.h"
+
 Now to build the pip package we need to invoke:
 
     bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
@@ -71,7 +75,7 @@ We now run the script that was generated with the previous command by typing:
 
 Finally, we use pip3 to install the wheel file created by:
 
-    sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.8.0-py2-none-any.whl
+    sudo pip3 install /tmp/tensorflow_pkg/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
 
 ## Validate Installation
 
