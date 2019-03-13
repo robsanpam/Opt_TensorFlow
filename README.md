@@ -5,15 +5,14 @@ These instructions are to install CPU-only TensorFlow with MPI support using Pyt
 Requirements:
 
     sudo pip3 install git six numpy wheel 
-    sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel
     sudo apt-get install pkg-config zip g++ zlib1g-dev unzip
 
 ## Installing Bazel
 
 Bazel is an open-source build and test tool. We download Bazel by doing:
 
-    wget https://github.com/bazelbuild/bazel/releases/download/0.16.1/bazel-0.16.1-installer-linux-x86_64.sh
-
+    wget https://github.com/bazelbuild/bazel/releases/download/0.18.1/bazel-0.18.1-installer-linux-x86_64.sh
+    
 Run the Bazel installer as follows:
 
     chmod +x bazel-0.16.1-installer-linux-x86_64.sh 
