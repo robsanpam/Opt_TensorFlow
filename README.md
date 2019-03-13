@@ -15,8 +15,8 @@ Bazel is an open-source build and test tool. We download Bazel by doing:
     
 Run the Bazel installer as follows:
 
-    chmod +x bazel-0.16.1-installer-linux-x86_64.sh 
-    ./bazel-0.16.1-installer-linux-x86_64.sh  --user
+    chmod +x bazel-0.18.1-installer-linux-x86_64.sh
+    ./bazel-0.18.1-installer-linux-x86_64.sh --user
 
 Add the following command to your _~/.bashrc_ file:
 
